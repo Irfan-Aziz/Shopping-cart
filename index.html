@@ -81,9 +81,9 @@
    <script>
       function subtractingProducts(productId,productPrice){
          const removeProd=document.getElementById(productId).value;
-         console.log(removeProd);
+         
          const currentNumberOfProd=parseFloat(removeProd);
-         console.log(currentNumberOfProd);
+         
          
          const currentNumberOfProduct=currentNumberOfProd-1;
        
@@ -92,7 +92,7 @@
        }else{
          document.getElementById(productId).value=0;
        }
-       //console.log(currentNumberOfProduct);
+       
          const subTotal=document.getElementById("subtotal").innerText;
          const oldSubtotal=parseFloat(subTotal);
          const prodPrice=document.getElementById(productPrice).innerText;
@@ -101,16 +101,17 @@
       if(currentSubTotal>0){
          document.getElementById("subtotal").innerText=currentSubTotal;
       }else{
-         //currentSubTotal=0;
+         
          document.getElementById("subtotal").innerText=0;
        }
+       //Tax is considered as 15%
        const prevTax=document.getElementById("tax").innerText;
          const tax=parseFloat(prevTax);
          const currentTax=tax-(0.15*prdPrice);
          if(currentTax>0){
          document.getElementById("tax").innerText=currentTax;
       }else{
-         //currentSubTotal=0;
+         
          document.getElementById("tax").innerText=0;
        }
        const oldTotal=document.getElementById("total").innerText;
@@ -119,16 +120,16 @@
          if(currentTotal>0){
          document.getElementById("total").innerText=currentTotal;
       }else{
-         //currentSubTotal=0;
+        
          document.getElementById("total").innerText=0;
        }
        }
        function addingProducts(productId1,productPrice1){
             const addProd=document.getElementById(productId1).value;
-         console.log(addProd);
+         
   
           const currentNumberOfProd=parseFloat(addProd);
-         console.log(currentNumberOfProd);
+         
          
          const currentNumberOfProduct=currentNumberOfProd+1;
          document.getElementById(productId1).value=currentNumberOfProduct;
@@ -138,6 +139,8 @@
          const prdPrice=parseFloat(prodPrice);
          const currentSubTotal=oldSubtotal+prdPrice;
          document.getElementById("subtotal").innerText=currentSubTotal;
+
+         //Tax is considered as 15%
          const prevTax=document.getElementById("tax").innerText;
          const tax=parseFloat(prevTax);
          const currentTax=tax+(0.15*prdPrice);
